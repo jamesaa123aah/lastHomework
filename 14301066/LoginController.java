@@ -39,7 +39,7 @@ public class LoginController {
 	 * @return
 	 * @throws Exception
 	 */
-	 @RequestMapping(value="/login")  
+	 @RequestMapping(value="/login",method={RequestMethod.GET,RequestMethod.POST})  
 	    public String login(HttpSession session,String id,String username,String password) throws Exception{        
 	        //在Session里保存信息  
 	        session.setAttribute("id", id);  
@@ -61,7 +61,7 @@ public class LoginController {
 	  * @return
 	  * @throws Exception
 	  */
-	    @RequestMapping(value="/logout")  
+	    @RequestMapping(value="/logout",method={RequestMethod.GET,RequestMethod.POST})  
 	    public String logout(HttpSession session) throws Exception{  
 	        //清除Session  
 	      //  session.invalidate();  
